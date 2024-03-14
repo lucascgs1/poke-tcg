@@ -1,22 +1,17 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { MaterialModule } from './material/material.module';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+// component
+import { NavMenuComponent } from "./components/nav-menu/nav-menu.component";
 
+// module
+import { MaterialModule } from "./material/material.module";
+import { ReactiveFormsModule, FormsModule } from "@angular/forms";
 
+// package
+import { NgModule } from "@angular/core";
+import { CommonModule } from "@angular/common";
 
 @NgModule({
-  declarations: [],
-  imports: [
-    CommonModule,
-    MaterialModule,
-    FormsModule,
-    ReactiveFormsModule,
-  ],
-  exports: [
-    MaterialModule,
-    FormsModule,
-    ReactiveFormsModule,
-  ]
+  declarations: [NavMenuComponent],
+  imports: [CommonModule, MaterialModule, FormsModule, ReactiveFormsModule],
+  exports: [MaterialModule, FormsModule, ReactiveFormsModule, NavMenuComponent],
 })
-export class SharedModule { }
+export class SharedModule {}

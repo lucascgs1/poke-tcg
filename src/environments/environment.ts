@@ -3,7 +3,11 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  token: "7628ec6e-f762-4339-806d-de4bc3f10191",
+  endPoints: {
+    tcgApi: "https://api.pokemontcg.io/v2/",
+  },
 };
 
 /*

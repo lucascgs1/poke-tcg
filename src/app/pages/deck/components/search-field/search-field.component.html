@@ -1,0 +1,52 @@
+<form class="search-form">
+  <div class="row">
+    <div class="col-12 mb-3">
+      <mat-form-field appearance="outline">
+        <mat-label>Busca</mat-label>
+        <input type="text" matInput placeholder="Bulbasauro" required>
+        <mat-icon matSuffix>search</mat-icon>
+        <mat-hint>Digite o nome ou numero do pokemon</mat-hint>
+      </mat-form-field>
+    </div>
+
+    <div class="col-12  mb-2">
+      <mat-form-field appearance="outline">
+        <mat-label>
+          Tipo de carta
+        </mat-label>
+        <mat-select>
+          <mat-option>Selecione uma opção</mat-option>
+          <mat-option value="item" *ngFor="let item of superTypesList">{{item}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+    <div class="col-12  mb-2">
+      <mat-form-field appearance="outline">
+        <mat-label>
+          Tipo do pokemon
+        </mat-label>
+        <mat-select>
+          <mat-option>Selecione uma opção</mat-option>
+          <mat-option value="item" *ngFor="let item of subTypesList">{{item}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+
+    <div class="col-12 mb-2">
+      <mat-form-field appearance="outline">
+        <mat-label>
+          Raridade da carta
+        </mat-label>
+        <mat-select>
+          <mat-option>Selecione uma opção</mat-option>
+          <mat-option value="item" *ngFor="let item of raritiesList">{{item}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+    <div class="col-12">
+      <button type="submit" mat-flat-button color="secondary" class="px-2">Primary</button>
+    </div>
+
+
+  </div>
+</form>

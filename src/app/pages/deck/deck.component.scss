@@ -1,0 +1,23 @@
+:host {
+  .deck {
+    font-size: 16px !important;
+
+    &__title {
+      display: flex;
+      justify-content: space-between;
+      font-size: 1.5em;
+    }
+
+    &__list__item {
+      cursor: pointer;
+      position: relative;
+
+      &__delete-button {
+        position: absolute;
+        z-index: 1 !important;
+        right: 7px !important;
+        top: -6px !important;
+      }
+    }
+  }
+}
