@@ -1,1 +1,66 @@
-<p>deck-details works!</p>
+<div class="container">
+  <form class="search-form">
+    <div class="row mt-4">
+      <div class="col-8">
+        <mat-form-field appearance="outline" style="width: 100%;">
+          <mat-label>Nome do Baralho</mat-label>
+          <input type="text" matInput placeholder="Baralho de planta" required>
+        </mat-form-field>
+      </div>
+      <div class="col-12 col-md-2 mt-1">
+        <button type="submit" mat-flat-button color="primary" style="    width: 100%;
+        padding: 0.8em 0;"> Salvar</button>
+      </div>
+
+      <div class="col-12 col-md-2 mt-1">
+        <button type="button" mat-flat-button color="secondary" style="    width: 100%;
+        padding: 0.8em 0;">Voltar</button>
+      </div>
+
+    </div>
+    <div class="row mt-3">
+      <div class="row col-12 col-md-9">
+        <div class="col-12 col-sm-6 col-md-3 col-lg-2" *ngFor="let card of pokemonCardsList">
+          <div class="row">
+            <div class="col-12 card-image">
+              <div class="row">
+                <img src={{card.images.small}} />
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </div>
+      <div class="col-12 col-md-3">
+        <div class="row">
+          <div class="col-12 mb-3">
+            <app-cards-list></app-cards-list>
+          </div>
+          <div class="col-12 mb-2">
+            <app-search-field></app-search-field>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </form>
+</div>

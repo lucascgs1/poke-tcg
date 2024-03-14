@@ -1,8 +1,13 @@
+// component
+import { NavMenuComponent } from "./components/nav-menu/nav-menu.component";
+
+// module
+import { MaterialModule } from "./material/material.module";
+import { ReactiveFormsModule, FormsModule } from "@angular/forms";
+
+// package
 import { NgModule } from "@angular/core";
 import { CommonModule } from "@angular/common";
-import { MaterialModule } from "./material/material.module";
-import { FormsModule, ReactiveFormsModule } from "@angular/forms";
-import { NavMenuComponent } from "./components/nav-menu/nav-menu.component";
 
 @NgModule({
   declarations: [NavMenuComponent],
