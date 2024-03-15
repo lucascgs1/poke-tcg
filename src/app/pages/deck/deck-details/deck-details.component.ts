@@ -1,4 +1,5 @@
 import { Component, OnInit } from "@angular/core";
+import { CardRequest } from "src/app/core/model/cardsRequest.interface";
 import {
   CardData,
   CardsResponse,
@@ -14,14 +15,26 @@ export class DeckDetailsComponent implements OnInit {
   CardsPage?: CardsResponse = null;
   pokemonCardsList: CardData[] = [];
   currentPage: number = 1;
+  cardRequest: CardRequest = {
+    pageSize: 48,
+  };
 
   constructor(private cardService: CardService) {}
 
   ngOnInit() {
-    this.cardService.getCards({}).subscribe((res) => {
+    this.getCard();
+  }
+
+  getCard() {
+    this.cardService.getCards(this.cardRequest).subscribe((res) => {
       this.CardsPage = res;
       this.pokemonCardsList = res.data;
       console.log(res);
     });
+  }
+
+  updateCurrentDeck($event, card) {
+    console.log($event);
+    console.log(card);
   }
 }

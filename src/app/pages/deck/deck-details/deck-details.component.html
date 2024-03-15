@@ -26,6 +26,7 @@
               <div class="row">
                 <img src={{card.images.small}} />
               </div>
+              <app-btn-number-count (updateAmount)="updateCurrentDeck($event, card)"></app-btn-number-count>
             </div>
           </div>
         </div>

@@ -12,6 +12,6 @@ import { CommonModule } from "@angular/common";
 @NgModule({
   declarations: [NavMenuComponent],
   imports: [CommonModule, MaterialModule, FormsModule, ReactiveFormsModule],
-  exports: [MaterialModule, FormsModule, ReactiveFormsModule, NavMenuComponent],
+  exports: [MaterialModule, NavMenuComponent],
 })
 export class SharedModule {}

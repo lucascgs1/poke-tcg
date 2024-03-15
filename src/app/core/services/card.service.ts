@@ -25,10 +25,10 @@ export class CardService {
   getCards(cardRequest: CardRequest): Observable<CardsResponse> {
     let url = this.url + "cards";
 
+    if (cardRequest && cardRequest.pageSize)
+      url += `?pageSize=${cardRequest.pageSize}`;
     if (cardRequest && cardRequest.q) url += `q=${cardRequest.q}`;
     if (cardRequest && cardRequest.page) url += `page=${cardRequest.page}`;
-    if (cardRequest && cardRequest.pageSize)
-      url += `pageSize=${cardRequest.pageSize}`;
     if (cardRequest && cardRequest.orderBy)
       url += `orderBy=${cardRequest.orderBy}`;
 

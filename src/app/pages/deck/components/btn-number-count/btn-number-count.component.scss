@@ -1,0 +1,47 @@
+:host {
+  .btn-number {
+    border-radius: 4px;
+    display: flex;
+    position: relative;
+    justify-content: space-evenly;
+    box-shadow: 0 3px 1px -2px rgba(0, 0, 0, .2), 0 2px 2px 0 rgba(0, 0, 0, .14), 0 1px 5px 0 rgba(0, 0, 0, .12);
+
+    input {
+      border: none;
+      text-align: center;
+      width: 58px;
+    }
+
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+
+    input[type=number] {
+      -moz-appearance: textfield;
+    }
+
+    .mat-icon-button {
+      &.mat-secondary {
+        background-color: #198754;
+        color: #fff;
+        border-radius: 0 4px 4px 0;
+
+        &:disabled {
+          background-color: #198754a8
+        }
+      }
+
+      &.mat-warn {
+        background-color: #f44336;
+        color: #fff;
+        border-radius: 4px 0 0 4px;
+
+        &:disabled {
+          background-color: #f44336a8
+        }
+      }
+    }
+  }
+}
