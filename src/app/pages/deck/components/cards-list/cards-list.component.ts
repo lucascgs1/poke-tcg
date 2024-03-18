@@ -1,4 +1,5 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, Input, OnInit } from "@angular/core";
+import { CardData } from "src/app/core/model/carsResponse.interface";
 
 @Component({
   selector: "app-cards-list",
@@ -6,25 +7,7 @@ import { Component, OnInit } from "@angular/core";
   styleUrls: ["./cards-list.component.scss"],
 })
 export class CardsListComponent implements OnInit {
-  selectedCards: any[] = [
-    {
-      name: "teste",
-      id: "123",
-      quantities: 4,
-    },
-
-    {
-      name: "teste",
-      id: "123",
-      quantities: 4,
-    },
-
-    {
-      name: "teste",
-      id: "123",
-      quantities: 4,
-    },
-  ];
+  @Input() cardList: CardData[] = [];
 
   constructor() {}
 

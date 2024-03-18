@@ -13,7 +13,7 @@ import { MatDividerModule } from "@angular/material/divider";
 import { MaterialModule } from "src/app/shared/material/material.module";
 import { DeckRoutingModule } from "./deck-routing.module";
 import { MatDrawer } from "@angular/material";
-import { FormsModule } from "@angular/forms";
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -24,7 +24,7 @@ import { FormsModule } from "@angular/forms";
     SearchFieldComponent,
     BtnNumberCountComponent,
   ],
-  imports: [CommonModule, DeckRoutingModule, MaterialModule, FormsModule],
+  imports: [CommonModule, DeckRoutingModule, MaterialModule, FormsModule, ReactiveFormsModule],
   exports: [CardsListComponent, DeckCardComponent, MatDividerModule, MatDrawer],
 })
 export class DeckModule {}

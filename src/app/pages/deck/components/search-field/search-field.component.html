@@ -1,9 +1,9 @@
-<form class="search-form">
+<form class="search-form" [formGroup]="searchForm" (ngSubmit)="onSubmit()">
   <div class="row">
     <div class="col-12 mb-3">
       <mat-form-field appearance="outline">
         <mat-label>Busca</mat-label>
-        <input type="text" matInput placeholder="Bulbasauro" required>
+        <input type="text" matInput placeholder="Bulbasauro" formControlName="pokemonName">
         <mat-icon matSuffix>search</mat-icon>
         <mat-hint>Digite o nome ou numero do pokemon</mat-hint>
       </mat-form-field>
@@ -14,9 +14,9 @@
         <mat-label>
           Tipo de carta
         </mat-label>
-        <mat-select>
+        <mat-select formControlName="superType">
           <mat-option>Selecione uma opção</mat-option>
-          <mat-option value="item" *ngFor="let item of superTypesList">{{item}}</mat-option>
+          <mat-option [value]="item" *ngFor="let item of superTypesList">{{item}}</mat-option>
         </mat-select>
       </mat-form-field>
     </div>
@@ -25,9 +25,9 @@
         <mat-label>
           Tipo do pokemon
         </mat-label>
-        <mat-select>
+        <mat-select formControlName="subType">
           <mat-option>Selecione uma opção</mat-option>
-          <mat-option value="item" *ngFor="let item of subTypesList">{{item}}</mat-option>
+          <mat-option [value]="item" *ngFor="let item of subTypesList">{{item}}</mat-option>
         </mat-select>
       </mat-form-field>
     </div>
@@ -37,9 +37,9 @@
         <mat-label>
           Raridade da carta
         </mat-label>
-        <mat-select>
+        <mat-select formControlName="rarities">
           <mat-option>Selecione uma opção</mat-option>
-          <mat-option value="item" *ngFor="let item of raritiesList">{{item}}</mat-option>
+          <mat-option [value]="item" *ngFor="let item of raritiesList">{{item}}</mat-option>
         </mat-select>
       </mat-form-field>
     </div>
