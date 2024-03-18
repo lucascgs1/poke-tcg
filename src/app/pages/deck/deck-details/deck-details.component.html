@@ -8,59 +8,49 @@
         </mat-form-field>
       </div>
       <div class="col-12 col-md-2 mt-1">
-        <button type="submit" mat-flat-button color="primary" style="    width: 100%;
-        padding: 0.8em 0;"> Salvar</button>
+        <button type="submit" mat-flat-button color="primary" style="width: 100%;padding: 0.8em 0;">
+          Salvar
+        </button>
       </div>
 
       <div class="col-12 col-md-2 mt-1">
-        <button type="button" mat-flat-button color="secondary" style="    width: 100%;
-        padding: 0.8em 0;">Voltar</button>
+        <button type="button" mat-flat-button color="secondary" style="width: 100%;padding: 0.8em 0;">
+          Voltar
+        </button>
       </div>
 
     </div>
     <div class="row mt-3">
       <div class="row col-12 col-md-9">
-        <div class="col-12 col-sm-6 col-md-3 col-lg-2" *ngFor="let card of pokemonCardsList">
+        <div class="col-12 col-sm-6 col-md-3 col-lg-2" *ngFor="let card of CardsPage.data">
           <div class="row">
             <div class="col-12 card-image">
               <div class="row">
                 <img src={{card.images.small}} />
               </div>
+              <app-btn-number-count (updateAmount)="updateCurrentDeck($event, card)"></app-btn-number-count>
             </div>
           </div>
         </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-      </div>
-      <div class="col-12 col-md-3">
-        <div class="row">
-          <div class="col-12 mb-3">
-            <app-cards-list></app-cards-list>
-          </div>
-          <div class="col-12 mb-2">
-            <app-search-field></app-search-field>
-          </div>
+        <div class="col-12 mb-3">
+          <button type="button" mat-flat-button color="secondary" style="width: 100%;padding: 0.8em 0;"
+            (click)="nextPage()" *ngIf="(CardsPage.pageSize * CardsPage.page) < CardsPage.totalCount">
+            Carregar mais
+          </button>
+          <h5 *ngIf="CardsPage.totalCount == 0" style="    font-size: 2em;font-weight: 300;">Nenhuma carta encontrada</h5>
         </div>
       </div>
 
+      <div class="col-12 col-md-3">
+        <div class="row">
+          <div class="col-12 mb-3">
+            <app-cards-list [cardList]="pokemonCardsList"></app-cards-list>
+          </div>
+          <div class="col-12 mb-2">
+            <app-search-field (searchOptions)="searchOptions($event)"></app-search-field>
+          </div>
+        </div>
+      </div>
     </div>
   </form>
 </div>

@@ -33,6 +33,7 @@ export interface CardData {
   rules?: string[]
   level?: string
   evolvesTo?: string[]
+  amount: 0;
 }
 
 export interface Attack {

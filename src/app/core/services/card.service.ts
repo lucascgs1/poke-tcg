@@ -20,17 +20,16 @@ import { retry, catchError, map } from "rxjs/operators";
 })
 export class CardService {
   url: string = environment.endPoints.tcgApi;
-  constructor(private _http: HttpClientService) {}
+  constructor(private _http: HttpClientService) { }
 
   getCards(cardRequest: CardRequest): Observable<CardsResponse> {
     let url = this.url + "cards";
 
-    if (cardRequest && cardRequest.q) url += `q=${cardRequest.q}`;
-    if (cardRequest && cardRequest.page) url += `page=${cardRequest.page}`;
-    if (cardRequest && cardRequest.pageSize)
-      url += `pageSize=${cardRequest.pageSize}`;
+    url += `?pageSize=${cardRequest.pageSize}`;
+    if (cardRequest && cardRequest.q) url += `&q=${cardRequest.q}`;
+    if (cardRequest && cardRequest.page) url += `&page=${cardRequest.page}`;
     if (cardRequest && cardRequest.orderBy)
-      url += `orderBy=${cardRequest.orderBy}`;
+      url += `&orderBy=${cardRequest.orderBy}`;
 
     return this._http.get<CardsResponse>({
       url: url,
